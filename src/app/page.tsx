@@ -56,7 +56,7 @@ export default function Home() {
         e.preventDefault();
         navigator.clipboard.writeText(response).then(() => {
             toast.success('Copied to clipboard! 📋', {
-                description: 'You can flex that result wherever you want, fam! ✨💅'
+                description: "The response has been copied to your clipboard."
             });
         }).catch(err => {
             console.error('Failed to copy text: ', err);
