@@ -12,7 +12,9 @@ let client: any = null;
 
 async function getClient() {
     if (!client) {
-        client = await Client.connect("vrkforever/Chat-Llama-3.2-3B-Instruct-uncensored");
+        client = await Client.connect("vrkforever/Chat-Llama-3.2-3B-Instruct-uncensored", {
+            hf_token: process.env.HUGGINGFACE_API_KEY as `hf_${string}`
+        });
     }
     return client;
 }
@@ -33,7 +35,7 @@ export async function POST(req: Request) {
         // Use Gradio client to generate text
         const result = await gradioClient.predict("/chat", [
             body.prompt,                    // message
-            body.systemPrompt || "You are a helpful AI assistant.", // system_prompt
+            body.systemPrompt || "",         // system_prompt
             1024,                           // max_new_tokens
             0.7,                           // temperature
         ]);

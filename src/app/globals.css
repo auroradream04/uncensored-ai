@@ -11,3 +11,35 @@ body {
     --radius: 0.5rem;
   }
 }
+
+.result-container p, .result-container li {
+  @apply text-xs text-zinc-800 dark:text-zinc-200 mb-2;
+}
+
+.result-container a {
+  @apply text-blue-500 hover:underline;
+}
+
+.result-container h1 {
+  @apply text-xl font-bold mb-2;
+}
+
+.result-container h2 {
+  @apply text-lg font-bold mb-2;
+}
+
+.result-container h3 {
+  @apply text-base font-bold mb-2;
+}
+
+.result-container ol, .result-container ul {
+  @apply pl-8;
+}
+
+.result-container ol > li {
+  @apply list-decimal ;
+}
+
+.result-container ul > li {
+  @apply list-disc;
+}
