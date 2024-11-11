@@ -12,9 +12,7 @@ let client: any = null;
 
 async function getClient() {
     if (!client) {
-        client = await Client.connect("vrkforever/Chat-Llama-3.2-3B-Instruct-uncensored", {
-            hf_token: process.env.HUGGINGFACE_API_KEY as `hf_${string}`
-        });
+        client = await Client.connect("vrkforever/Chat-Llama-3.2-3B-Instruct-uncensored");
     }
     return client;
 }
