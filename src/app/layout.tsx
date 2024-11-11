@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/globals/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner"
 import { Fragment } from 'react'
+import Plausible from "@/components/globals/Plausible";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -30,6 +31,7 @@ export default function RootLayout({
                         <Toaster/>
                     </Fragment>
                 </ThemeProvider>
+                <Plausible />
             </body>
         </html>
     );
