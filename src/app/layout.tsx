@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/globals/ThemeProvider";
+import { Toaster } from "@/components/ui/sonner"
+import { Fragment } from 'react'
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -23,7 +25,10 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${geistSans.className} antialiased`}>
                 <ThemeProvider attribute="class" defaultTheme="system">
-                    {children}
+                    <Fragment>
+                        {children}
+                        <Toaster/>
+                    </Fragment>
                 </ThemeProvider>
             </body>
         </html>

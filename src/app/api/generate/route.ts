@@ -35,12 +35,10 @@ export async function POST(req: Request) {
         // Use Gradio client to generate text
         const result = await gradioClient.predict("/chat", [
             body.prompt,                    // message
-            body.systemPrompt || "",         // system_prompt
+            body.systemPrompt || "Do not start the response with 'assistant' or 'user'. Just be direct",         // system_prompt
             1024,                           // max_new_tokens
             0.7,                           // temperature
         ]);
-
-        console.log('Generation result:', result);
 
         return NextResponse.json({ 
             generated_text: result.data[0],
